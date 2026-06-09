@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SOUNDWAVE FEST 2025 - UTS Web Desain 2 | Paket A</title>
+  <link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"/>
+  <style>
+    /* =============================================
+       STYLE DASAR SUDAH DISIAPKAN - JANGAN DIUBAH
+       ============================================= */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #d9ddde;
+      color: #f0f0f0;
+    }
+    .hero {
+      background: linear-gradient(135deg, #6faed0, #2486af, #168fc4);
+      padding: 100px 0 60px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: #62acac;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+          }
+    .hero p {
+      font-size: 1.2rem;
+      color: #a0a0b0;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #619095;
+      border-left: 5px solid #000000;
+      padding-left: 15px;
+      margin-bottom: 30px;
+    }
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid #33bec3;
+    }
+    .soal-label {
+      display: inline-block;
+      background: #000000;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 3px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    /* Kartu lineup artis */
+    .artist-card {
+      background: #52aaba;
+      border: 1px solid #84a1a1;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      height: 100%;
+    }
+    .artist-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid #000000;
+    }
+    .artist-card h5 {
+      color: #ffffff;
+      font-weight: 700;
+    }
+    .artist-card p {
+      color: #888888;
+      font-size: 0.85rem
+    }
+     /* Tiket */
+    .ticket-card {
+      background: #3f8c9a;
+      border: 2px solid #000000;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+    }
+    .ticket-card .price {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #000000;
+    }
+    .ticket-card .type {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    /* Footer */
+    footer {
+      background: #0a0a0a;
+      text-align: center;
+      padding: 30px;
+      color: #555;
+      font-size: 0.85rem;
+    }
+    /* =============================================
+       TAMBAHKAN CSS KUSTOM KAMU DI BAWAH INI
+       (untuk Soal 3 - Modifikasi Desain)
+       ============================================= */
+  </style>
+</head>
+<body>
+<!-- ==============================
+     HERO SECTION (Sudah Lengkap)
+     ============================== -->
+<div class="hero">
+  <div class="container">
+    <h1>n SOUNDWAVE FEST 2025</h1>
+    <p>Festival Musik Terbesar Tahun Ini &mdash; 3 Hari, 20 Band, 1 Panggung Epik</p>
+    <p><strong style="color:#45d3e9;">n 15–17 Agustus 2025</strong> &nbsp;|&nbsp; <strong
+style="color:#45cee9;">n Gelora Bung Karno, Jakarta</strong></p>
+  </div>
+</div>
+
+<!-- ============================================================
+     SOAL 1 — SISTEM GRID BOOTSTRAP
+     Lengkapi bagian [...] dengan class Bootstrap yang tepat
+
+       ============================================================ -->
+<section id="lineup">
+  <div class="container">
+    <span class="soal-label">Soal 1 — Grid Bootstrap</span>
+    <h2 class="section-title">Lineup Artis</h2>
+    <p class="text-muted mb-4">
+      <em>Instruksi: Isi semua [...] di bawah ini dengan class Bootstrap yang benar
+      agar kartu artis tampil <strong>3 kolom di layar besar</strong>,
+      <strong>2 kolom di tablet</strong>, dan <strong>1 kolom di HP</strong>.</em>
+    </p>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="artist-card">
+          <img src="data:image/jpeg;base64,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" alt="Artis 1"/>
+          <h5>Rocket Ignition</h5>
+          <p>Hard Rock | Jakarta</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="artist-card">
+          <img src="https://www.google.com/imgres?q=gambar%20tanpa%20profil%20wa&imgurl=https%3A%2F%2Fi.pinimg.com%2F736x%2F12%2Fe8%2Fa2%2F12e8a2baf63b0b44ec2be7d95abc2773.jpg&imgrefurl=https%3A%2F%2Fwww.telkomsel.com%2Fjelajah%2Fjelajah-lifestyle%2F10-rekomendasi-pp-wa-kosong-aesthetic-bisa-di-download&docid=8E8fe0IvDxyjBM&tbnid=Cb77qQpqqKdR2M&vet=12ahUKEwjb5piGufqUAxW5S2cHHXSTGu8QnPAOegQIHxAB..i&w=736&h=736&hcb=2&ved=2ahUKEwjb5piGufqUAxW5S2cHHXSTGu8QnPAOegQIHxAB" alt="Artis 2"/>
+          <h5>Midnight Echo</h5>
+          <p>Indie Pop | Bandung</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="artist-card">
+          <img src="https://www.google.com/imgres?q=gambar%20animasi&imgurl=https%3A%2F%2Fwww.gambaranimasi.org%2Fdata%2Fmedia%2F1052%2Fanimasi-bergerak-chibi-0050.png&imgrefurl=https%3A%2F%2Fwww.gambaranimasi.org%2Fcat-cd-dan-dvd-429.htm&docid=gQ1u_0P1fG_RaM&tbnid=Hj_wQBxaEsPh5M&vet=12ahUKEwjwl4fCufqUAxVlSWwGHei9Ku0QnPAOegQIbhAB..i&w=399&h=470&hcb=2&ved=2ahUKEwjwl4fCufqUAxVlSWwGHei9Ku0QnPAOegQIbhAB" alt="Artis 3"/>
+          <h5>Thunder Hollow</h5>
+          <p>Metal | Surabaya</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mt-4">
+        <div class="artist-card">
+          <img src="https://id.pngtree.com/freepng/blank-whatsapp-couple-profile_6512222.html" alt="Artis 4"/>
+          <h5>The Wanderers</h5>
+          <p>Acoustic | Yogyakarta</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mt-4">
+        <div class="artist-card">
+          <img src="https://www.google.com/imgres?q=gambar%20tanpa%20profil%20wa&imgurl=https%3A%2F%2Fi.pinimg.com%2F474x%2Fb7%2F1c%2F6b%2Fb71c6b7c90235f42443eddff73dbe51e.jpg&imgrefurl=https%3A%2F%2Fid.pinterest.com%2Fandinitrim%2Ffoto-profil-whatsapp-kosong%2F&docid=eAKVOo7WyIuqZM&tbnid=pivIJa-NDorOCM&vet=12ahUKEwjb5piGufqUAxW5S2cHHXSTGu8QnPAOegQIHBAB..i&w=400&h=400&hcb=2&ved=2ahUKEwjb5piGufqUAxW5S2cHHXSTGu8QnPAOegQIHBAB" alt="Artis 5"/>
+          <h5>Solar Drift</h5>
+          <p>Psychedelic | Bali</p>
+        </div>
+    </div>
+        <div class="col-12 col-md-6 col-lg-4 mt-4">
+        <div class="artist-card">
+          <img src="https://www.google.com/imgres?q=gambar%20tanpa%20profil%20wa&imgurl=https%3A%2F%2Fi.pinimg.com%2F236x%2F6a%2Fc1%2Fec%2F6ac1ec926b98e7aa40a329c57a66b054.jpg&imgrefurl=https%3A%2F%2Fid.pinterest.com%2Fandinitrim%2Ffoto-profil-whatsapp-kosong%2F&docid=eAKVOo7WyIuqZM&tbnid=Bx2lW4bHcXRU9M&vet=12ahUKEwjb5piGufqUAxW5S2cHHXSTGu8QnPAOegQIGBAB..i&w=236&h=236&hcb=2&ved=2ahUKEwjb5piGufqUAxW5S2cHHXSTGu8QnPAOegQIGBAB" alt="Artis 6"/>
+          <h5>Iron Canvas</h5>
+          <p>Progressive | Medan</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============================================================
+     SOAL 2A — TABEL BOOTSTRAP
+     Lengkapi [...] dengan class Bootstrap yang tepat
+     ============================================================ -->
+<section id="jadwal">
+  <div class="container">
+    <span class="soal-label">Soal 2 — Tabel Bootstrap</span>
+    <h2 class="section-title">Jadwal Penampilan</h2>
+    <p class="text-muted mb-4">
+      <em>Instruksi: Isi semua [...] agar tabel tampil dengan style Bootstrap:
+      <strong>tabel bergaris (bordered)</strong>,
+      <strong>baris selang-seling (striped)</strong>,
+      <strong>efek hover</strong>, dan <strong>responsif di HP</strong>.</em>
+    </p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>Hari</th>
+            <th>Waktu</th>
+            <th>Artis</th>
+            <th>Genre</th>
+            <th>Panggung</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hari 1 (15 Agt)</td>
+            <td>18.00 – 19.30</td>
+            <td>The Wanderers</td>
+            <td>Acoustic</td>
+            <td>Stage B</td>
+          </tr>
+          <tr>
+            <td>Hari 1 (15 Agt)</td>
+            <td>20.00 – 22.00</td>
+            <td>Midnight Echo</td>
+            <td>Indie Pop</td>
+            <td>Main Stage</td>
+           </tr>
+          <tr>
+            <td>Hari 2 (16 Agt)</td>
+            <td>17.00 – 18.30</td>
+            <td>Solar Drift</td>
+            <td>Psychedelic</td>
+            <td>Stage B</td>
+          </tr>
+          <tr>
+            <td>Hari 2 (16 Agt)</td>
+            <td>19.30 – 21.30</td>
+            <td>Thunder Hollow</td>
+            <td>Metal</td>
+            <td>Main Stage</td>
+          </tr>
+          <tr>
+            <td>Hari 3 (17 Agt)</td>
+            <td>18.00 – 19.00</td>
+            <td>Iron Canvas</td>
+            <td>Progressive</td>
+            <td>Stage B</td>
+          </tr>
+          <tr>
+            <td>Hari 3 (17 Agt)</td>
+            <td>20.00 – 22.30</td>
+            <td>Rocket Ignition</td>
+            <td>Hard Rock</td>
+            <td>Main Stage</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<!-- ============================================================
+     SOAL 3 — FORM BOOTSTRAP
+     Lengkapi [...] dengan class Bootstrap yang tepat
+     ============================================================ -->
+<section id="daftar">
+  <div class="container">
+    <span class="soal-label">Soal 3 — Form Bootstrap</span>
+    <h2 class="section-title">Beli Tiket</h2>
+    <p class="text-muted mb-4">
+      <em>Instruksi: Isi semua [...] dengan class Bootstrap yang benar
+      agar form tampil rapi, responsif, dan memiliki styling yang sesuai.</em>
+    </p>
+    <div class="row justify-content-center">
+      <div class="col-md-7">
+        <div class="card p-4">
+            <div class="form-group">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" class="form-control" id="nama" placeholder="Masukkan nama
+lengkap Anda"/>
+          </div>
+          <div class="form-group">
+            <label for="email">Alamat Email</label>
+            <input type="email" class="form-control" id="email"
+placeholder="contoh@email.com"/>
+          </div>
+          <div class="form-group">
+            <label for="telp">Nomor Telepon</label>
+            <input type="tel" class="form-control" id="telp" placeholder="08xxxxxxxxxx"/>
+          </div>
+          <div class="form-group">
+            <label for="tiket">Jenis Tiket</label>
+            <select class="form-control" id="tiket">
+              <option value="">-- Pilih Jenis Tiket --</option>
+              <option>Regular (Rp 150.000)</option>
+              <option>VIP (Rp 350.000)</option>
+              <option>VVIP (Rp 750.000)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="jumlah">Jumlah Tiket</label>
+            <input type="number" class="form-control" id="jumlah" min="1" max="10" value="1"/>
+            <small class="form-text text-muted">Maksimal pembelian 10 tiket per transaksi.</small>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="syarat"/>
+              <label class="form-check-label" for="syarat">
+                Saya menyetujui syarat dan ketentuan yang berlaku.
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-danger btn-block">
+              Beli Tiket Sekarang
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+   <!-- HARGA TIKET -->
+    <section class="py-5">
+        <div class="container">
+
+            <h2 class="text-center fw-bold display-5 mb-5">
+                🎫 Harga Tiket
+            </h2>
+
+            <div class="row g-4">
+
+                <!-- REGULAR -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-lg rounded-4 h-100">
+                        <div class="card-body text-center p-4">
+
+                            <span class="badge bg-primary fs-6 mb-3">
+                                REGULAR
+                            </span>
+
+                            <h1 class="text-primary fw-bold">
+                                Rp150.000
+                            </h1>
+
+                            <p class="text-muted">
+                                Tiket masuk reguler untuk menikmati seluruh area wisata.
+                            </p>
+
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item">✅ Akses area utama</li>
+                                <li class="list-group-item">✅ Tempat duduk standar</li>
+                                <li class="list-group-item">✅ Gratis parkir</li>
+                            </ul>
+
+                            <button class="btn btn-primary btn-lg w-100">
+                                Beli Tiket
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIP -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-lg rounded-4 h-100">
+                        <div class="card-body text-center p-4">
+
+                            <span class="badge bg-warning text-dark fs-6 mb-3">
+                                VIP ⭐
+                            </span>
+
+                            <h1 class="text-warning fw-bold">
+                                Rp350.000
+                            </h1>
+
+                            <p class="text-muted">
+                                Nikmati fasilitas tambahan dengan kenyamanan lebih.
+                            </p>
+
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item">✅ Semua fasilitas Regular</li>
+                                <li class="list-group-item">✅ Tempat duduk VIP</li>
+                                <li class="list-group-item">✅ Jalur masuk khusus</li>
+                            </ul>
+
+                            <button class="btn btn-warning btn-lg w-100">
+                                Beli Tiket
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VVIP -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-lg rounded-4 h-100">
+                        <div class="card-body text-center p-4">
+
+                            <span class="badge bg-dark fs-6 mb-3">
+                                VVIP 👑
+                            </span>
+
+                            <h1 class="text-dark fw-bold">
+                                Rp750.000
+                            </h1>
+
+                            <p class="text-muted">
+                                Paket premium dengan fasilitas paling lengkap.
+                            </p>
+
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item">✅ Semua fasilitas VIP</li>
+                                <li class="list-group-item">✅ Lounge eksklusif</li>
+                                <li class="list-group-item">✅ Souvenir spesial</li>
+                            </ul>
+
+                            <button class="btn btn-dark btn-lg w-100">
+                                Beli Tiket
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- KONTAK & MEDIA SOSIAL -->
+    <section class="py-5">
+        <div class="container">
+
+            <h2 class="text-center fw-bold display-5 mb-5">
+                📞 Hubungi Kami
+            </h2>
+
+            <div class="row g-4">
+
+                <!-- INFORMASI EVENT -->
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-lg rounded-4 h-100">
+                        <div class="card-body p-4">
+
+                            <h3 class="fw-bold mb-4">
+                                📍 Informasi Event
+                            </h3>
+
+                            <div class="mb-4">
+                                <h5>🏟️ Alamat</h5>
+                                <p class="text-muted">
+                                    Stadion Gelora Bung Karno,
+                                    Jakarta Pusat
+                                </p>
+                            </div>
+
+                            <div class="mb-4">
+                                <h5>📧 Email</h5>
+                                <p class="text-muted">
+                                    info@soundwavefest.com
+                                </p>
+                            </div>
+
+                            <div>
+                                <h5>📱 Telepon</h5>
+                                <p class="text-muted">
+                                    0812-3456-7890
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MEDIA SOSIAL -->
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-lg rounded-4 h-100">
+                        <div class="card-body p-4">
+
+                            <h3 class="fw-bold mb-4">
+                                🌐 Media Sosial
+                            </h3>
+
+                            <p class="text-muted">
+                                Ikuti informasi terbaru mengenai jadwal konser,
+                                artis yang tampil, dan promo tiket melalui
+                                media sosial kami.
+                            </p>
+
+                            <div class="list-group">
+
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    📸 Instagram :
+                                    <strong>@soundwavefest</strong>
+                                </a>
+
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    🐦 Twitter/X :
+                                    <strong>@soundwavefest</strong>
+                                </a>
+
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    👍 Facebook :
+                                    <strong>Soundwave Fest Official</strong>
+                                </a>
+
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    🎵 TikTok :
+                                    <strong>@soundwavefest</strong>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
